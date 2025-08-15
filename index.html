@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>El Paisa - Servicios Integrales de Reparación</title>
+<meta name="description" content="El Paisa - Servicios integrales de reparación: refrigeración, electricidad, plomería, albañilería y más. Presupuestos para seguros, garantía y facturación en Argentina." />
+<meta name="robots" content="index, follow" />
+<meta property="og:title" content="El Paisa - Servicios Integrales de Reparación" />
+<meta property="og:description" content="Reparaciones rápidas, seguras y confiables para tu hogar con garantía y facturación oficial." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://elpaisa.example.com" />
+<meta property="og:image" content="https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1200&q=80" />
+<style>
+  /* Reset y básicos */
+  * {
+    margin: 0; padding: 0; box-sizing: border-box;
+  }
+  body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #fafafa;
+  }
+
+  /* Contenedor general */
+  .container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 0 20px;
+  }
+
+  /* Header */
+  header {
+    background: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.4);
+  }
+  header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  /* Logo simple */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    font-size: 1.8rem;
+    user-select: none;
+    cursor: default;
+  }
+  .logo svg {
+    width: 40px;
+    height: 40px;
+    fill: #f4b400;
+    animation: logo-spin 6s linear infinite;
+  }
+  @keyframes logo-spin {
+    0% {transform: rotate(0deg);}
+    100% {transform: rotate(360deg);}
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+  }
+  nav a {
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  nav a:hover,
+  nav a:focus {
+    color: #f4b400;
+    outline: none;
+  }
+
+  /* Iconos sociales */
+  .social-icons {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  .social-icons a {
+    display: inline-flex;
+    color: white;
+    transition: color 0.3s ease;
+    font-size: 0;
+  }
+  .social-icons a:hover,
+  .social-icons a:focus {
+    color: #f4b400;
+    outline: none;
+  }
+  .social-icons svg {
+    width: 36px;
+    height: 36px;
+    fill: currentColor;
+  }
+
+  /* Hero */
+  #hero {
+    background: url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+    color: white;
+    padding: 120px 20px 100px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  #hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(26, 26, 26, 0.6);
+    z-index: 0;
+  }
+  #hero > .container {
+    position: relative;
+    z-index: 1;
+  }
+  #hero h2 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    animation: fadeInDown 1s ease forwards;
+    color: white !important;
+  }
+  #hero p {
+    font-size: 1.3rem;
+    margin-bottom: 30px;
+    animation: fadeInUp 1s ease forwards;
+  }
+  .btn {
+    background: #f4b400;
+    color: #222;
+    padding: 15px 30px;
+    font-weight: 700;
+    text-decoration: none;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px rgba(244, 180, 0, 0.5);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    display: inline-block;
+    animation: fadeInUp 1.2s ease forwards;
+  }
+  .btn:hover,
+  .btn:focus {
+    background: #d39e00;
+    box-shadow: 0 7px 20px rgba(211, 158, 0, 0.7);
+    outline: none;
+  }
+
+  @keyframes fadeInDown {
+    0% {opacity: 0; transform: translateY(-30px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+  @keyframes fadeInUp {
+    0% {opacity: 0; transform: translateY(30px);}
+    100% {opacity: 1; transform: translateY(0);}
+  }
+
+  /* Sección Servicios */
+  section {
+    padding: 60px 0;
+  }
+  h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.4rem;
+    color: #1a1a1a;
+  }
+  .grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+  }
+  .card {
+    position: relative;
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    cursor: default;
+  }
+  .card:hover,
+  .card:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    outline: none;
+  }
+  /* Cover imagen para cada card */
+  .card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+    border-radius: 8px;
+  }
+  .card:hover::before,
+  .card:focus-within::before {
+    opacity: 0.25;
+  }
+  /* Texto sobre la cover */
+  .card h3, .card p {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* Imágenes distintas para cada card */
+  .grid > .card:nth-child(1)::before {
+    background-image: url('https://www.bing.com/th/id/OIP.sclv-8_l1N0tUAbSBt5gvQHaE6?w=240&h=211&c=8&rs=1&qlt=70&o=7&cb=thws4&pid=3.1&rm=3');
+  }
+  .grid > .card:nth-child(2)::before {
+    background-image: url('https://www.bing.com/th/id/OIP.gKf6i3hXI6AUNfY1wSH_DgHaIQ?w=196&h=211&c=8&rs=1&qlt=70&o=7&cb=thws4&pid=3.1&rm=3');
+  }
+  .grid > .card:nth-child(3)::before {
+    background-image: url('https://www.bing.com/th/id/OIP.4w0L9KIHEEFyfI7nD-HApgHaE5?w=273&h=211&c=8&rs=1&qlt=70&o=7&cb=thws4&pid=3.1&rm=3');
+  }
+  .grid > .card:nth-child(4)::before {
+    background-image: url('https://www.bing.com/th/id/OIP.-5K0l0dE5EGcf0-YOGA3WwHaFJ?w=248&h=211&c=8&rs=1&qlt=70&o=7&cb=thws4&pid=3.1&rm=3');
+  }
+  .grid > .card:nth-child(5)::before {
+    background-image: url('https://www.bing.com/th/id/OIP.Xz-GjBvjm20j2DNh_RttywHaEo?w=260&h=211&c=8&rs=1&qlt=70&o=7&cb=thws4&pid=3.1&rm=3');
+  }
+.grid > .card:nth-child(6)::before {
+    background-image: url('https://www.bing.com/th/id/OIP.gS_3ucoHCTzGYSeiNZrbdgHaEY?w=244&h=211&c=8&rs=1&qlt=70&o=7&cb=thws4&pid=3.1&rm=3');
+}
+  /* Preguntas frecuentes */
+  .faq {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .faq-item {
+    margin-bottom: 25px;
+  }
+  .faq-item h3 {
+    font-size: 1.3rem;
+    color: #1a1a1a;
+    margin-bottom: 10px;
+  }
+  .faq-item p {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  /* Galería */
+  .gallery {
+    display: grid;
+    gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  }
+  .gallery img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.3s ease;
+  }
+  .gallery img:hover,
+  .gallery img:focus {
+    transform: scale(1.05);
+    outline: none;
+  }
+
+  /* Formulario */
+  form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+  }
+  label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #222;
+  }
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  textarea:focus {
+    border-color: #f4b400;
+    outline: none;
+  }
+  textarea {
+    resize: vertical;
+    min-height: 100px;
+  }
+  button[type="submit"] {
+    background: #f4b400;
+    color: #222;
+    padding: 15px 30px;
+    font-weight: 700;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background 0.3s ease;
+  }
+  button[type="submit"]:hover,
+  button[type="submit"]:focus {
+    background: #d39e00;
+    outline: none;
+  }
+  /* Mensaje de confirmación */
+  .form-message {
+    text-align: center;
+    font-weight: 600;
+    margin-top: 15px;
+    color: #28a745;
+  }
+
+  /* Footer */
+  footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 25px 20px;
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  footer a {
+    color: #f4b400;
+    text-decoration: none;
+  }
+  footer a:hover,
+  footer a:focus {
+    text-decoration: underline;
+    outline: none;
+  }
+
+  /* Responsive tweaks */
+  @media (max-width: 600px) {
+    nav {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 15px;
+    }
+  }
+
+</style>
+</head>
+<body>
+
+<header role="banner">
+  <div class="container">
+    <div class="logo" aria-label="Logotipo El Paisa">
+      <!-- Ícono simple SVG -->
+      <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="30" />
+        <path fill="#1a1a1a" d="M20 32l8 12 16-24z" />
+      </svg>
+      El Paisa
+    </div>
+    <nav role="navigation" aria-label="Menú principal">
+      <a href="#servicios" tabindex="0">Servicios</a>
+      <a href="#faq" tabindex="0">Preguntas</a>
+      <a href="#contacto" tabindex="0">Contacto</a>
+    </nav>
+     </div>
+</header>
+
+<section id="hero" role="region" aria-label="Presentación principal">
+  <div class="container">
+    <h2>Servicios Integrales de Reparación y Mantenimiento</h2>
+    <p>Reparaciones seguras y confiables para tu hogar o negocio.</p>
+    <a href="#contacto" class="btn" role="button" tabindex="0">Solicitar servicio</a>
+  </div>
+</section>
+
+<section id="servicios" role="region" aria-labelledby="titulo-servicios">
+<div class="container">
+    <h2 id="titulo-servicios">¿Quienes Somos?</h2>
+            <h3>En El Paisa contamos con años de experiencia brindando servicios de confianza. Nos situamos en Zona Oeste y ofrecemos servicios en toda la Ciudad de Buenos Aires (CABA) y el Área Metropolitana (AMBA). Nuestro equipo profesional está dedicado a ofrecer soluciones rápidas y efectivas, garantizando que tu hogar y tu negocio funcionen siempre a la perfección.</h3><BR> <BR>
+             </article>
+
+  <div class="container">
+    <h2 id="titulo-servicios">Nuestros Servicios</h2>
+    <div class="grid">
+      <article class="card" tabindex="0" aria-label="Servicio de refrigeración">
+        <h3>Refrigeración Comercial y Domiciliaria</h3>
+        <p>Instalación, reparación, mantenimiento de equipos de frio, heladeras y aires acondicionados (tradicionales e inverter).</p>
+      </article>
+<article class="card" tabindex="0" aria-label="Servicio de climatizacion">
+        <h3>Climatizacion a Leña</h3>
+        <p>Instalación profesional de estufas a leña Tromen, Lepen, Qutral y Ñuke, utilizando materiales de primera calidad, tanto nacionales como importados.</p>
+      </article>
+
+      <article class="card" tabindex="0" aria-label="Servicio de electricidad">
+        <h3>Electricidad</h3>
+        <p>Soluciones eléctricas para tu hogar y negocio, garantizando seguridad, eficiencia y calidad en cada proyecto.</p>
+      </article>
+      <article class="card" tabindex="0" aria-label="Servicio de plomería">
+        <h3>Lavarropas Automaticos</h3>
+        <p>Reparación especializada de lavarropas y plaquetas.Atención personalizada a domicilio.</p>
+      </article>
+      <article class="card" tabindex="0" aria-label="Servicio de pintura y albañilería">
+        <h3>Pintura y Albañilería</h3>
+        <p>Trabajos de construcción, remodelación y decoracion con materiales de calidad.</p>
+      </article>
+      <article class="card" tabindex="0" aria-label="Presupuestos para seguros">
+        <h3>Presupuestos para Seguros</h3>
+        <p>Evaluamos trabajos y emitimos presupuestos detallados para trámites con aseguradoras.</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section id="faq" role="region" aria-labelledby="titulo-faq">
+  <div class="container faq">
+    <h2 id="titulo-faq">Preguntas Frecuentes</h2>
+
+    <div class="faq-item">
+      <h3>¿Los trabajos tienen garantía?</h3>
+      <p>Sí, todos nuestros trabajos e instalaciones cuentan con garantía. La duración y los términos específicos dependen del tipo de servicio realizado y siempre se detallan claramente en el presupuesto previo. Trabajamos para que tengas total tranquilidad y confianza en nuestros servicios.</p>
+    </div>   
+
+    <div class="faq-item">
+      <h3>¿Qué medios de pago aceptan?</h3>
+      <p>Aceptamos pagos en efectivo, transferencia bancaria y a través de Mercado Pago (tarjetas de débito, crédito y dinero en cuenta)
+
+Emitimos factura electrónica.
+
+Podés solicitar factura A o B según corresponda.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>¿Cómo funcionan los presupuestos?</h3>
+      <p>Nuestros presupuestos son integrales y detallados. Si aceptás el trabajo, el valor del presupuesto se descuenta del total. También realizamos presupuestos para trámites con seguros.</p>
+    </div>
+ <div class="faq-item">
+      <h3>¿Qué zonas de cobertura tienen?</h3>
+      <p>Brindamos servicios en toda la Zona Oeste del Gran Buenos Aires, así como en la totalidad de la Ciudad Autónoma de Buenos Aires (CABA). Para consultas en otras zonas del AMBA, no dudes en contactarnos.</p>
+    </div>
+<div class="faq-item">
+      <h3>Urgencias </h3>
+      <p>Resolvemos tus emergencias sin demoras.</p><p>Cuando lo necesites, estamos ahí.</p>
+    </div> </section>
+
+
+<section id="contacto" role="region" aria-labelledby="titulo-contacto">
+  <div class="container">
+    <h2 id="titulo-contacto">Contactanos</h2>
+    <form id="contactForm" aria-describedby="formInstructions" novalidate>
+      <p id="formInstructions">Completá el formulario y nos pondremos en contacto a la brevedad.</p>
+
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" required aria-required="true" placeholder="Tu nombre completo" />
+
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email" required aria-required="true" placeholder="tu@email.com" />
+
+      <label for="telefono">Teléfono</label>
+      <input type="text" id="telefono" name="telefono" placeholder="Opcional" pattern="[\d\s+-]{6,15}" title="Ingrese solo números y caracteres + - espacio" />
+
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje" required aria-required="true" placeholder="Escribí tu consulta o solicitud"></textarea>
+
+      <button type="submit">Enviar</button>
+
+      <div class="form-message" role="alert" aria-live="polite" id="formMessage" style="display:none;"></div>
+    </form>
+
+    </div>
+</section>
+<footer style="padding: 20px; background: #222; color: #eee; text-align: center; font-family: Arial, sans-serif;">
+  <p>© 2025 El Paisa Servicios Integrales. Todos los derechos reservados BY ELPAISA.</p>
+  <p class="footer-contact" style="margin-bottom: 15px;">
+    Teléfono y Urgencias: <a href="tel:+5491165631842" style="color: #4CAF50; text-decoration: none;">(011) 6563-1842</a> | 
+    Email: <a href="mailto:walterlumi16@gmail.com" style="color: #4CAF50; text-decoration: none;">Mail_@ELPAISA</a>
+  </p>
+  <div class="footer-socials" style="display: inline-flex; gap: 30px; justify-content: center; align-items: center;">
+    <a href="https://wa.me/5491165631842" class="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" style="color: #25D366; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.3rem; transition: transform 0.3s ease;">
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="#25D366" aria-hidden="true" focusable="false">
+        <path d="M16.6 14.2c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.7-.8.9-.1.1-.3.2-.5.1s-.9-.3-1.8-1.1c-.7-.6-1.1-1.4-1.3-1.6-.1-.2 0-.4.1-.5l.5-.5c.1 0 .2-.1.3-.2.1-.1.1-.2.1-.4 0-.1 0-.8-.1-1s-.6-1.1-.8-1.1c-.2 0-.4 0-.5.1-.2.1-.7.3-1 .8s-1.1 2.1-1.1 3.2.7 4.1 2.1 5.5c1.4 1.4 3.5 3.3 6.4 4.1.4.1.7.1 1 .1.5 0 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2s-.2-.2-.4-.3zm3.9-8.7A9.9 9.9 0 0 0 12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10c0-2.7-1.1-5.2-2.9-7.1z"/>
+      </svg>
+      WhatsApp
+    </a>
+
+    <a href="https://www.instagram.com/elpaisa1650/" class="instagram" target="_blank" rel="noopener noreferrer" aria-label="Instagram" style="color: #E4405F; text-decoration: none; display: flex; align-items: center; gap: 10px; font-weight: bold; font-size: 1.3rem; transition: transform 0.3s ease;">
+      <svg viewBox="0 0 24 24" width="32" height="32" fill="#E4405F" aria-hidden="true" focusable="false">
+        <path d="M12 2c2.7 0 3 .01 4.1.06 1.1.05 1.8.2 2.5.5.7.3 1.2.7 1.8 1.3s1 1.1 1.3 1.8c.3.7.45 1.4.5 2.5.05 1.1.06 1.4.06 4.1s-.01 3-.06 4.1c-.05 1.1-.2 1.8-.5 2.5-.3.7-.7 1.2-1.3 1.8s-1.1 1-1.8 1.3c-.7.3-1.4.45-2.5.5-1.1.05-1.4.06-4.1.06s-3 0-4.1-.06c-1.1-.05-1.8-.2-2.5-.5-.7-.3-1.2-.7-1.8-1.3s-1-1.1-1.3-1.8c-.3-.7-.45-1.4-.5-2.5C2.01 15 2 14.7 2 12s0-3 .06-4.1c.05-1.1.2-1.8.5-2.5.3-.7.7-1.2 1.3-1.8s1.1-1 1.8-1.3c.7-.3 1.4-.45 2.5-.5C9 2.01 9.3 2 12 2zm0 1.8c-2.7 0-3-.01-4-.06-1-.05-1.5.1-1.9.3-.5.2-.8.5-1.2 1-.3.3-.6.7-1 1.2-.2.4-.3.9-.3 1.9-.05 1-.06 1.3-.06 4s0 3 .06 4c.05 1 .1 1.5.3 1.9.2.5.5.8 1 1.2.3.3.7.6 1.2 1 .4.2.9.3 1.9.3 1 .05 1.3.06 4 .06s3 0 4-.06c1-.05 1.5-.1 1.9-.3.5-.2.8-.5 1.2-1 .3-.3.6-.7 1-1.2.2-.4.3-.9.3-1.9.05-1 .06-1.3.06-4s0-3-.06-4c-.05-1-.1-1.5-.3-1.9-.2-.5-.5-.8-1-1.2-.3-.3-.7-.6-1.2-1-.4-.2-.9-.3-1.9-.3-1-.05-1.3-.06-4-.06zm0 3.2c-2.8 0-5 2.2-5 5s2.2 5 5 5 5-2.2 5-5-2.2-5-5-5zm0 8.2c-1.8 0-3.2-1.4-3.2-3.2s1.4-3.2 3.2-3.2 3.2 1.4 3.2 3.2-1.4 3.2-3.2 3.2zm6.3-8.8c-.7 0-1.2.5-1.2 1.2s.5 1.2 1.2 1.2 1.2-.5 1.2-1.2-.5-1.2-1.2-1.2z"/>
+      </svg>
+      Instagram
+    </a>
+  </div>
+</footer>
+
+<style>
+  .footer-socials a:hover {
+    transform: scale(1.1);
+  }
+</style>
+
+</footer>
+
+<script>
+  // Validación simple y mensaje de confirmación
+  const form = document.getElementById('contactForm');
+  const messageBox = document.getElementById('formMessage');
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // Validaciones HTML5 básicas ya están, solo mostrar mensaje
+
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+
+    // Simular envío (en la práctica se conecta a backend)
+    messageBox.style.color = '#28a745';
+    messageBox.textContent = '¡Gracias por contactarnos! Nos comunicaremos a la brevedad.';
+    messageBox.style.display = 'block';
+
+    // Reset form
+    form.reset();
+
+    // Desaparece mensaje después de 6 segundos
+    setTimeout(() => {
+      messageBox.style.display = 'none';
+    }, 6000);
+  });
+</script>
+
+</body>
+</html>
